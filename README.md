@@ -1,5 +1,5 @@
 # Proxify
- 
+
 Provides a simple proxy for developing web apps on non-standard ports.
 
 ### Usage
@@ -22,7 +22,6 @@ You can also use non-localhost entries for your backend. Essentially it has to f
 
 ```sh
 ./run.sh speedtest.net
-./run.sh imgur.com:443
 ./run.sh 10.0.0.10:80
 ```
 
