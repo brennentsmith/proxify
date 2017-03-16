@@ -16,7 +16,9 @@ cd proxify
 
 Ta-da! You now are able to access http://localhost and https://localhost on their native ports. 
 
-You can also use non-localhost entries for your backend:
+### Backends
+
+You can also use non-localhost entries for your backend. Essentially it has to follow the standard format of hostname:port. The port is optional, and please don't include the protocol. As of right now, Proxify doesn't support SSL backends.
 
 ```sh
 ./run.sh speedtest.net
@@ -25,3 +27,13 @@ You can also use non-localhost entries for your backend:
 ```
 
 Proxify binds on all interfaces - so you can, assuming your firewall allows it, connect from an other device on your network to the proxy. *Likewise, if you are in a coffee shop, make sure your firewall is locked down!*
+
+### Hostname Spoofing
+
+Say you want to have speedtest.net direct to proxify, simply add the following entry to `/etc/hosts`:
+
+```sh
+127.0.0.1  www.speedtest.net speedtest.net
+```
+
+Now you can go to speedtest.net, and your requests will be routed through proxify (and thus, your backend).
