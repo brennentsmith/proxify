@@ -15,7 +15,8 @@ function proxify_usage {
 
 function proxify_main {
     echo "Proxying $1 to http://localhost and https://localhost"
-    eval $(which docker) run -e "BACKEND=$1" -it -p 7080:7080 -p 80:80 -p 443:443 proxify
+    eval $(which docker) run -e "BACKEND=$1" -it -p 7080:7080 -p 80:80 -p 443:443 proxify:latest
+    eval $(which docker) ps -a | awk '{ print $1,$2 }' | grep proxify:latest | awk '{print $1 }' | xargs -I {} docker rm {} > /dev/null
     echo ""
     echo "Farewell, lone traveler..."
 }
