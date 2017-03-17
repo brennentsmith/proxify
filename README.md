@@ -10,7 +10,6 @@ Run the following on the client machine:
 ```sh
 git clone https://github.com/brennentsmith/proxify.git
 cd proxify
-./build.sh
 ./run.sh localhost:6379 
 ```
 
@@ -26,6 +25,10 @@ You can also use non-localhost entries for your backend. Essentially it has to f
 ```
 
 Proxify binds on all interfaces - so you can, assuming your firewall allows it, connect from an other device on your network to the proxy. *Likewise, if you are in a coffee shop, make sure your firewall is locked down!*
+
+### Docker Hub
+
+This uses Docker hub for all builds. Should you want to perform a local build instead, just run `./build.sh`
 
 ### Hostname Spoofing
 
